@@ -1,8 +1,12 @@
 import java.time.Instant;
 import java.time.Duration;
-import java.util.Random;
 
-public static void insertionSort(Integer[] a) {
+public class uke7opgp2 {
+    public static void main(String[] args) {
+        // Add your test code here
+    }
+
+    public static void insertionSort(Integer[] a) {
     for (int i = 1; i < a.length; i++) {
         Integer temp = a[i];
         int j = i - 1;
@@ -17,8 +21,6 @@ public static void insertionSort(Integer[] a) {
 
 //Plukksortering 
 public static void selectionSort(Integer[] a) {
-    int n = a.length;
-
     for (int i = 0; i < a.length - 1; i++) {
         int minIndex = i;
 
@@ -29,7 +31,7 @@ public static void selectionSort(Integer[] a) {
         }
 
         Integer temp = a[i];
-        a[i] = a[iminIndex];
+        a[i] = a[minIndex];
         a[minIndex] = temp;
     }
 }
@@ -63,8 +65,8 @@ public static void mergeSort(Integer[] a) {
     Integer[] left = new Integer[mid];
     Integer[] right = new Integer[a.length - mid];
 
-    system.arraycopy(a, 0, left, 0, mid);
-    system.arraycopy(a, mid, right, 0, a.length - mid);
+    System.arraycopy(a, 0, left, 0, mid);
+    System.arraycopy(a, mid, right, 0, a.length - mid);
 
     mergeSort(left);
     mergeSort(right);
@@ -85,7 +87,6 @@ private static void merge(Integer[] a, Integer[] left, Integer[] right) {
 
     while (i < left.length) a[k++] = left[i++];
     while (j < right.length) a[k++] = right[j++];
-    }
 }
 
 public static long measureTime(Integer[] a, String method) {
@@ -110,4 +111,5 @@ public static long measureTime(Integer[] a, String method) {
 
     Instant end = Instant.now();
     return Duration.between(start, end).toMillis();
+    }
 }
